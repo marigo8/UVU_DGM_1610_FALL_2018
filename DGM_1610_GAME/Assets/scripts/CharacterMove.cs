@@ -11,7 +11,7 @@ using UnityEngine;
 public class CharacterMove : MonoBehaviour {
 
 	// Player Movement Variables
-	public int MoveSpeed;
+	public float MoveSpeed;
 	public float JumpHeight;
 
 	// Player Grounded Variables
@@ -35,8 +35,13 @@ public class CharacterMove : MonoBehaviour {
 		if(Input.GetKeyDown (KeyCode.Space) && Grounded){
 			Jump();
 		}
-
-		
+		if(Input.GetKey (KeyCode.D)){
+			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x+MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+		}
+		if(Input.GetKey (KeyCode.A)){
+			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+		}
+		print("Speed: "+GetComponent<Rigidbody2D>().velocity.x);
 	}
 
 	// Character Jump Function
