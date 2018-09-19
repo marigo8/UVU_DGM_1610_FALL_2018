@@ -41,19 +41,19 @@ public class CharacterMove : MonoBehaviour {
 
 			// Move Right
 			if(Input.GetKey (KeyCode.D)){
-				// velocity.x = velocity.x + MoveSpeed
+				// velocity.x = velocity.x + MoveSpeed;
 				GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x+MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			}
 			// Move Left
 			if(Input.GetKey (KeyCode.A)){
-				// velocity.x = velocity.x - MoveSpeed
+				// velocity.x = velocity.x - MoveSpeed;
 				GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			}
 	}
 
 	// Character Jump Function
 	public void Jump(){
-		// velocity.y = JumpHeight
+		// velocity.y = JumpHeight;
 		GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, JumpHeight);
 	}
 }
