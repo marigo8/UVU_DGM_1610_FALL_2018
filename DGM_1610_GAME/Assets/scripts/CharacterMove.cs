@@ -26,26 +26,34 @@ public class CharacterMove : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
+		// Set Grounded variable
 		Grounded = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, WhatIsGround);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		// This code makes the character jump
-		if(Input.GetKeyDown (KeyCode.Space) && Grounded){
-			Jump();
-		}
-		if(Input.GetKey (KeyCode.D)){
-			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x+MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-		}
-		if(Input.GetKey (KeyCode.A)){
-			GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-		}
-		print("Speed: "+GetComponent<Rigidbody2D>().velocity.x);
+
+		// MOVEMENT CONTROLS
+			// Jump
+			if(Input.GetKeyDown (KeyCode.Space) && Grounded){
+				Jump();
+			}
+
+			// Move Right
+			if(Input.GetKey (KeyCode.D)){
+				// velocity.x = velocity.x + MoveSpeed
+				GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x+MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+			}
+			// Move Left
+			if(Input.GetKey (KeyCode.A)){
+				// velocity.x = velocity.x - MoveSpeed
+				GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+			}
 	}
 
 	// Character Jump Function
 	public void Jump(){
+		// velocity.y = JumpHeight
 		GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, JumpHeight);
 	}
 }
