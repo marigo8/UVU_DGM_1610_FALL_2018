@@ -49,16 +49,6 @@ public class CharacterMove : MonoBehaviour {
 				// velocity.x = velocity.x - MoveSpeed;
 				GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 			}
-
-		// ReOrientate
-		/*
-		if(Input.GetKeyDown (KeyCode.F)){
-			Jump();
-			new WaitForSeconds(0.5f);
-			//GetComponent<Transform>().rotation = new Vector3(GetComponent<Transform>().rotation.x, GetComponent<Transform>().rotation.y, 0.0f);
-			GetComponent<Transform>().rotation.z = 0.0f;
-		}
-		*/
 	}
 
 	// Character Jump Function
