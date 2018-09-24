@@ -84,13 +84,7 @@ public class CharacterMove : MonoBehaviour {
 					}
 				}
 			}
-<<<<<<< Updated upstream
-=======
-
 			GetComponent<Rigidbody2D>().velocity = new Vector2(MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
-
-		
->>>>>>> Stashed changes
 	}
 
 	// Character Jump Function
