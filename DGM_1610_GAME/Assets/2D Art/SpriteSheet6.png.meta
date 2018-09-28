@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 84f9e1df05d99f14b8633ecfd74a6259
+guid: acfb5213523de0a4eb26eb02bf2d4ef2
 TextureImporter:
   fileIDToRecycleName:
-    21300000: square0
-    21300002: square1
-    21300004: car0
-    21300006: truck0
+    21300000: Enemy0_Idle0
+    21300002: Enemy0_Jump0
+    21300004: Enemy0_Jump1
+    21300006: Spill0
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -88,53 +88,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: square0
+      name: Enemy0_Idle0
       rect:
         serializedVersion: 2
-        x: 2498
-        y: 924
-        width: 475
-        height: 475
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b0464b5af5c730347ba114b3a567aefd
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: square1
-      rect:
-        serializedVersion: 2
-        x: 1868
-        y: 930
-        width: 475
-        height: 475
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1479146275066cd46a03e08b22dd1c58
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: car0
-      rect:
-        serializedVersion: 2
-        x: 1058
-        y: 1328
-        width: 525
-        height: 245
+        x: 496
+        y: 1953
+        width: 805
+        height: 520
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,19 +102,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfddb917ec596d84284e6188edac0b6a
+      spriteID: abcd669773c1db84ba0dfe7b5d719652
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: truck0
+      name: Enemy0_Jump0
       rect:
         serializedVersion: 2
-        x: 761
-        y: 1776
-        width: 802
-        height: 326
+        x: 1371
+        y: 1947
+        width: 940
+        height: 416
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,7 +122,47 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfa859078425ae5459e1cb02bfb7f7f9
+      spriteID: 1332cf80869f96047bae2a41fc12171c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy0_Jump1
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 618
+        width: 822
+        height: 862
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9e007073c5cc364ca515bf573e81786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spill0
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 1237
+        width: 557
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7767fb568f67dab42bd41db7ba20146a
       vertices: []
       indices: 
       edges: []
@@ -170,7 +170,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f377320907f849f42bdfca9f46387e8c
+    spriteID: 2dee294585c21a0448feffd59aafadfe
     vertices: []
     indices: 
     edges: []

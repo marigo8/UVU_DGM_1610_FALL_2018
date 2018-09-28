@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 84f9e1df05d99f14b8633ecfd74a6259
+guid: 88599c36f51ccce4b8b329bc017fb037
 TextureImporter:
   fileIDToRecycleName:
-    21300000: square0
-    21300002: square1
-    21300004: car0
-    21300006: truck0
+    21300000: Ramp0
+    21300002: Tree0
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -88,11 +86,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: square0
+      name: Ramp0
       rect:
         serializedVersion: 2
-        x: 2498
-        y: 924
+        x: 1888
+        y: 1738
         width: 475
         height: 475
       alignment: 0
@@ -102,39 +100,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0464b5af5c730347ba114b3a567aefd
+      spriteID: 369446cffbc1ca34c85455406299cc3f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: square1
+      name: Tree0
       rect:
         serializedVersion: 2
-        x: 1868
-        y: 930
-        width: 475
-        height: 475
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1479146275066cd46a03e08b22dd1c58
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: car0
-      rect:
-        serializedVersion: 2
-        x: 1058
-        y: 1328
-        width: 525
-        height: 245
+        x: 1708
+        y: 615
+        width: 989
+        height: 758
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,27 +120,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfddb917ec596d84284e6188edac0b6a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: truck0
-      rect:
-        serializedVersion: 2
-        x: 761
-        y: 1776
-        width: 802
-        height: 326
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cfa859078425ae5459e1cb02bfb7f7f9
+      spriteID: 3c09822ea915f3e49a89effa12653641
       vertices: []
       indices: 
       edges: []
@@ -170,7 +128,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f377320907f849f42bdfca9f46387e8c
+    spriteID: 07e86247e01b7d44f9fb89c487c10ea9
     vertices: []
     indices: 
     edges: []

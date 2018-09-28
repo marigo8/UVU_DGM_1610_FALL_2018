@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 84f9e1df05d99f14b8633ecfd74a6259
+guid: b6475d5e66a480c48b219225d9125d88
 TextureImporter:
   fileIDToRecycleName:
-    21300000: square0
-    21300002: square1
-    21300004: car0
-    21300006: truck0
+    21300000: Run0
+    21300002: Run3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -88,53 +86,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: square0
+      name: Run0
       rect:
         serializedVersion: 2
-        x: 2498
-        y: 924
-        width: 475
-        height: 475
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b0464b5af5c730347ba114b3a567aefd
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: square1
-      rect:
-        serializedVersion: 2
-        x: 1868
-        y: 930
-        width: 475
-        height: 475
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1479146275066cd46a03e08b22dd1c58
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: car0
-      rect:
-        serializedVersion: 2
-        x: 1058
-        y: 1328
-        width: 525
-        height: 245
+        x: 1237
+        y: 1444
+        width: 600
+        height: 1000
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,27 +100,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfddb917ec596d84284e6188edac0b6a
+      spriteID: 9e1d7c766af51fe4c9d09efb15b712c5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: truck0
+      name: Run3
       rect:
         serializedVersion: 2
-        x: 761
-        y: 1776
-        width: 802
-        height: 326
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1883
+        y: 1445
+        width: 600
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfa859078425ae5459e1cb02bfb7f7f9
+      spriteID: 444a37f4686a41c49839135016b6fabe
       vertices: []
       indices: 
       edges: []
@@ -170,7 +128,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f377320907f849f42bdfca9f46387e8c
+    spriteID: b6a90fe471c66024e94387315aee8c43
     vertices: []
     indices: 
     edges: []

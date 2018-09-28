@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 84f9e1df05d99f14b8633ecfd74a6259
+guid: f1e946ffce3f18640a07849f053041d2
 TextureImporter:
   fileIDToRecycleName:
-    21300000: square0
-    21300002: square1
-    21300004: car0
-    21300006: truck0
+    21300000: HP
+    21300002: Heart
+    21300004: Coin1
+    21300006: Coin0
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -88,13 +88,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: square0
+      name: HP
       rect:
         serializedVersion: 2
-        x: 2498
-        y: 924
-        width: 475
-        height: 475
+        x: 387
+        y: 2144
+        width: 381
+        height: 247
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -102,19 +102,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0464b5af5c730347ba114b3a567aefd
+      spriteID: 0acee4e5d16b3fb45b105cbedcf73b3e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: square1
+      name: Heart
       rect:
         serializedVersion: 2
-        x: 1868
-        y: 930
-        width: 475
-        height: 475
+        x: 862
+        y: 2146
+        width: 264
+        height: 237
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,47 +122,47 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1479146275066cd46a03e08b22dd1c58
+      spriteID: 70937b6e541153041a72750f89ef9405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: car0
+      name: Coin1
       rect:
         serializedVersion: 2
-        x: 1058
-        y: 1328
-        width: 525
-        height: 245
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 936
+        y: 599
+        width: 303
+        height: 535
+      alignment: 9
+      pivot: {x: 0.4916666, y: 0.30177528}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfddb917ec596d84284e6188edac0b6a
+      spriteID: 4120921c5e91a59479dc301a600bd75d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: truck0
+      name: Coin0
       rect:
         serializedVersion: 2
-        x: 761
-        y: 1776
-        width: 802
-        height: 326
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1895
+        y: 472
+        width: 291
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfa859078425ae5459e1cb02bfb7f7f9
+      spriteID: dab9acf6f171b2f439f15fc2369e34a3
       vertices: []
       indices: 
       edges: []
@@ -170,7 +170,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f377320907f849f42bdfca9f46387e8c
+    spriteID: 4b57872353c94c149bd570674594c0c7
     vertices: []
     indices: 
     edges: []
