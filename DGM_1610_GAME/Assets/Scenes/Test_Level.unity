@@ -590,11 +590,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 5
-  Acceleration: 0.2
+  SprintModifier: 2
   MaxVelocity: 0
   JumpHeight: 8
   GroundCheck: {fileID: 1124635378}
-  GroundCheckRadius: 0.5
+  GroundCheckRadius: 0.05
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -789,7 +789,7 @@ GameObject:
   m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
