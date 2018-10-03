@@ -6,7 +6,7 @@ public class CoinPickup : MonoBehaviour {
 	public int CoinValue;
 
 	void OnTriggerEnter2D (Collider2D Other){
-		if (Other.GetComponent<Rigidbody2D> () == null){
+		if (Other.GetComponent<CharacterMove> () == null){
 			return;
 		}
 		ScoreManager.AddPoints (CoinValue);
