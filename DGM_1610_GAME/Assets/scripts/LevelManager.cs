@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour {
 	public GameObject CurrentCheckPoint;
 
 	// Player Controller
-	private Controller2D Player;
+	private Rigidbody2D Player;
 
 	// Particles
 	public GameObject DeathParticle;
@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// Get Player Object on game start
-		Player = FindObjectOfType<CharacterMove> ();
+		Player = FindObjectOfType<Rigidbody2D> ();
 	}
 
 	public void RespawnPlayer(){
@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour {
 		Player.GetComponent<Renderer> ().enabled = false;
 
 		// Gravity Reset
-		GravityStore = Player.GetComponent<Rigidbody2D>().GravityScale;
+		GravityStore = Player.GetComponent<Rigidbody2D>().gravityScale;
 		Player.GetComponent<Rigidbody2D>().gravityScale = 0f;
 		Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		
