@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour {
 
+	// Current CheckPoint
 	public GameObject CurrentCheckPoint;
+
+	// Player Controller
 	private Controller2D Player;
 
 	// Particles
@@ -22,6 +25,7 @@ public class LevelManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		// Get Player Object on game start
 		Player = FindObjectOfType<CharacterMove> ();
 	}
 
@@ -48,5 +52,21 @@ public class LevelManager : MonoBehaviour {
 
 		// Debug Message
 		Debug.Log ("Player Respawn");
+
+		// Respawn Delay
+		yield return new WaitForSeconds (RespawnDelay);
+
+		// Gravity Restore
+		Player.GetComponent<Rigidbody2D>().gravityScale = GravityStore;
+
+		// Match Players transform position
+		Player.transform.position = CurrentCheckPoint.transform.position;
+
+		// Show Player
+		Player.enabled = true;
+		Player.GetComponent<Renderer> ().enabled = true;
+
+		// Spawn Player
+		Instantiate (RespawnParticle, CurrentCheckPoint.transform.position, CurrentCheckPoint.transform.rotation);
 	}
 }
