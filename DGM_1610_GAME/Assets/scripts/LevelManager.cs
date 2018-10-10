@@ -41,11 +41,6 @@ public class LevelManager : MonoBehaviour {
 		// Hide Player
 		//Player.enabled = false;
 		Player.GetComponent<Renderer>().enabled = false;
-
-		// Gravity Reset
-		GravityStore = Player.GetComponent<Rigidbody2D>().gravityScale;
-		Player.GetComponent<Rigidbody2D>().gravityScale = 0f;
-		Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		
 		// Point Penalty
 		ScoreManager.AddPoints(-PointPenaltyOnDeath);
@@ -55,6 +50,11 @@ public class LevelManager : MonoBehaviour {
 
 		// Respawn Delay
 		yield return new WaitForSeconds (RespawnDelay);
+
+		// Gravity Reset
+		GravityStore = Player.GetComponent<Rigidbody2D>().gravityScale;
+		Player.GetComponent<Rigidbody2D>().gravityScale = 0f;
+		Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
 		// Gravity Restore
 		Player.GetComponent<Rigidbody2D>().gravityScale = GravityStore;
