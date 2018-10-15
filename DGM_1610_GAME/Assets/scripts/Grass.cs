@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class Grass : Plant {
 
-    public color BladeColor;
+    public Color BladeColor;
 	
 }

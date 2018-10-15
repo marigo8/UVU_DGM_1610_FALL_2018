@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour {
 
+	// Is Player Dead?
+	private bool PlayerIsDead = false;
+
 	// Current CheckPoint
 	public GameObject CurrentCheckPoint;
 
@@ -35,6 +38,9 @@ public class LevelManager : MonoBehaviour {
 
 	public IEnumerator RespawnPlayerCo(){
 
+		// Player is Dead
+		PlayerIsDead = true;
+
 		// Generate Death Particle
 		Instantiate (DeathParticle, Player.transform.position, Player.transform.rotation);
 
@@ -65,6 +71,9 @@ public class LevelManager : MonoBehaviour {
 		// Show Player
 		// Player.enabled = true;
 		Player.GetComponent<Renderer> ().enabled = true;
+
+		// Player is Alive Again
+		PlayerIsDead = false;
 
 		// Spawn Particle
 		Instantiate (RespawnParticle, CurrentCheckPoint.transform.position, CurrentCheckPoint.transform.rotation);

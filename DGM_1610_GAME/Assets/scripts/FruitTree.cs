@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FruitTree : Tree {
+public class FruitTree : TreeClass {
 
 	public string FruitType;
-    public color FruitColor;
+    public Color FruitColor;
 	
 }
