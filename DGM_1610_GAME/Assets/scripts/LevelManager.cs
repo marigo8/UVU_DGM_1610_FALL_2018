@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour {
 
 	// Is Player Dead?
-	private bool PlayerIsDead = false;
+	public static bool PlayerIsDead = false;
 
 	// Current CheckPoint
 	public GameObject CurrentCheckPoint;
@@ -31,6 +31,8 @@ public class LevelManager : MonoBehaviour {
 		// Get Player Object on game start
 		// Player = FindObjectOfType<Rigidbody2D> ();
 	}
+	void Update (){
+	}
 
 	public void RespawnPlayer(){
 		StartCoroutine("RespawnPlayerCo");
@@ -46,6 +48,8 @@ public class LevelManager : MonoBehaviour {
 
 		// Hide Player
 		//Player.enabled = false;
+		Player.Sleep();
+		Player.GetComponent<PolygonCollider2D>().enabled = false;
 		Player.GetComponent<Renderer>().enabled = false;
 		
 		// Point Penalty
@@ -70,6 +74,8 @@ public class LevelManager : MonoBehaviour {
 
 		// Show Player
 		// Player.enabled = true;
+		Player.WakeUp();
+		Player.GetComponent<PolygonCollider2D>().enabled = true;
 		Player.GetComponent<Renderer> ().enabled = true;
 
 		// Player is Alive Again

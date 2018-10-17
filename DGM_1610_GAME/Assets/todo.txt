@@ -1,0 +1,5 @@
+TODO:
+
+    use better "FaceRight" in EnemyPatrol.cs
+    try character controller component
+    add delay in EnemyPatrol.cs

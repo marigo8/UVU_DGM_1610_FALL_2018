@@ -17,6 +17,8 @@ public class CharacterMove : MonoBehaviour {
 	public float JumpHeight;
 	private bool DoubleJump;
 	private float MoveSpeedModifier;
+	private bool FacingRight = true;
+	private Vector3 PlayerScale;
 
 	// Player Grounded Variables
 	public Transform GroundCheck;
@@ -29,7 +31,7 @@ public class CharacterMove : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		PlayerScale = transform.localScale;
 	}
 
 	void FixedUpdate () {
@@ -40,6 +42,7 @@ public class CharacterMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// Sprint
+		if(!LevelManager.PlayerIsDead){
 		if(Input.GetKey (KeyCode.LeftShift)){
 			MoveSpeedModifier = SprintModifier;
 		}else{
@@ -76,6 +79,14 @@ public class CharacterMove : MonoBehaviour {
 				}
 				GetComponent<Rigidbody2D>().velocity = new Vector2(MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
 			}
+			// If player is not facing right
+			if(!FacingRight){
+				// Make Player face right
+				PlayerScale.x *= -1;
+				transform.localScale = PlayerScale;
+				// Player is now facing right
+				FacingRight = true;
+			}	
 		}
 		// Move Left
 		if(Input.GetKey (KeyCode.A)){
@@ -90,9 +101,21 @@ public class CharacterMove : MonoBehaviour {
 				}
 				GetComponent<Rigidbody2D>().velocity = new Vector2(MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
 			}
+			// If player is facing right
+			if(FacingRight){
+				// Make Player Face left
+				PlayerScale.x *= -1;
+				transform.localScale = PlayerScale;
+				// Player is no longer facing right
+				FacingRight = false;
+			}	
 		}
 		if(Grounded){
 			GetComponent<Rigidbody2D>().velocity = new Vector2(MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
+		}
+		}
+		else{
+			GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
 		}
 	}
 

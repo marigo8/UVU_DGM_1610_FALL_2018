@@ -20,8 +20,10 @@ public class EnemyPatrol : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		// Check if near edge
 		NotAtEdge = Physics2D.OverlapCircle(EdgeCheck.position, WallCheckRadius, WhatIsWall);
 
+		// Check if hitting wall
 		HittingWall = Physics2D.OverlapCircle(WallCheck.position, WallCheckRadius, WhatIsWall);
 
 		// Bounce off wall.
@@ -29,11 +31,12 @@ public class EnemyPatrol : MonoBehaviour {
 			MoveRight = !MoveRight;
 		}
 
-		if (MoveRight){
+		// Flip sprite if needed.
+		if (MoveRight){ // Face Right
 			transform.localScale = new Vector3(.4f,.4f,1f);
 			GetComponent<Rigidbody2D>().velocity = new Vector2(MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 		}
-		else{
+		else{ // Face Left
 			
 			transform.localScale = new Vector3(-.4f,.4f,1f);
 			GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
