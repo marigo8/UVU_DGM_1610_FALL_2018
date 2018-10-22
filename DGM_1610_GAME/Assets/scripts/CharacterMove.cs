@@ -73,7 +73,7 @@ public class CharacterMove : MonoBehaviour {
 			if(Grounded){
 				MoveVelocity = MoveSpeed*MoveSpeedModifier;
 			}else{
-				MoveVelocity += MoveSpeed*MoveSpeedModifier*0.1f;
+				MoveVelocity = GetComponent<Rigidbody2D>().velocity.x + MoveSpeed*MoveSpeedModifier*0.1f;
 				if(MoveVelocity > MoveSpeed*MoveSpeedModifier){
 					MoveVelocity = MoveSpeed*MoveSpeedModifier;
 				}
@@ -95,7 +95,7 @@ public class CharacterMove : MonoBehaviour {
 			if(Grounded){
 				MoveVelocity = -MoveSpeed*MoveSpeedModifier;
 			}else{
-				MoveVelocity -= MoveSpeed*MoveSpeedModifier*0.05f;
+				MoveVelocity = GetComponent<Rigidbody2D>().velocity.x - MoveSpeed*MoveSpeedModifier*0.05f;
 				if(MoveVelocity < -MoveSpeed*MoveSpeedModifier){
 					MoveVelocity = -MoveSpeed*MoveSpeedModifier;
 				}
