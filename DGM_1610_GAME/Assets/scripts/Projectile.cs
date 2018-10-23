@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour {
 
 	public float Speed;
+	public float LifeTime;
 	public Rigidbody2D PC;
 	
 	public GameObject EnemyDeath;
@@ -33,6 +34,11 @@ public class Projectile : MonoBehaviour {
 		}
 
 		Instantiate(HitParticle, transform.position, transform.rotation);
+		Destroy (gameObject);
+	}
+
+	IEnumerator LifeTimer(){
+		yield return new WaitForSeconds(LifeTime);
 		Destroy (gameObject);
 	}
 }
