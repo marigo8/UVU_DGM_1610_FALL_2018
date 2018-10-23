@@ -20,6 +20,7 @@ public class Projectile : MonoBehaviour {
 			Speed = -Speed;
 		}
 		GetComponent<Rigidbody2D>().velocity = new Vector2(Speed, GetComponent<Rigidbody2D>().velocity.y);
+		StartCoroutine(LifeTime());
 	}
 	
 	// Update is called once per frame
