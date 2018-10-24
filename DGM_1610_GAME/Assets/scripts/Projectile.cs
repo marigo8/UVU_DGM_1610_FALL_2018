@@ -20,7 +20,7 @@ public class Projectile : MonoBehaviour {
 			Speed = -Speed;
 		}
 		GetComponent<Rigidbody2D>().velocity = new Vector2(Speed, GetComponent<Rigidbody2D>().velocity.y);
-		StartCoroutine(LifeTime());
+		//StartCoroutine(LifeTimer());
 	}
 	
 	// Update is called once per frame
@@ -33,9 +33,10 @@ public class Projectile : MonoBehaviour {
 			Destroy (other.gameObject);
 			ScoreManager.AddPoints (PointsForKill);
 		}
-
-		Instantiate(HitParticle, transform.position, transform.rotation);
-		Destroy (gameObject);
+		if(other.tag != "Coin"){
+			Instantiate(HitParticle, transform.position, transform.rotation);
+			Destroy (gameObject);
+		}
 	}
 
 	IEnumerator LifeTimer(){
