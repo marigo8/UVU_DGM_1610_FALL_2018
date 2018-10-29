@@ -48,6 +48,7 @@ public class LevelManager : MonoBehaviour {
 
 		// Hide Player
 		//Player.enabled = false;
+		Player.simulated = false;
 		Player.Sleep();
 		Player.GetComponent<PolygonCollider2D>().enabled = false;
 		Player.GetComponent<Renderer>().enabled = false;
@@ -74,6 +75,7 @@ public class LevelManager : MonoBehaviour {
 
 		// Show Player
 		// Player.enabled = true;
+		Player.simulated = true;
 		Player.WakeUp();
 		Player.GetComponent<PolygonCollider2D>().enabled = true;
 		Player.GetComponent<Renderer> ().enabled = true;
