@@ -21,10 +21,11 @@ public class CharacterMove : MonoBehaviour {
 	private Vector3 PlayerScale;
 
 	// Player Grounded Variables
-	public Transform GroundCheck;
-	public float GroundCheckRadius;
+	// public Transform GroundCheck;
+	// public float GroundCheckRadius;
+	public Collider2D GroundCheck;
 	public LayerMask WhatIsGround;
-	private bool Grounded;
+	public static bool Grounded;
 
 	// Non-Stick Player
 	private float MoveVelocity;
@@ -34,10 +35,12 @@ public class CharacterMove : MonoBehaviour {
 		PlayerScale = transform.localScale;
 	}
 
-	void FixedUpdate () {
-		// Set Grounded variable
-		Grounded = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, WhatIsGround);
-	}
+	// void FixedUpdate () {
+	// 	Set Grounded variable
+	// 	Grounded = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, WhatIsGround);
+	// }
+
+	
 	
 	// Update is called once per frame
 	void Update () {
