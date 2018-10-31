@@ -2,9 +2,7 @@ TODO:
 
     INSTALL UNITY 2018.1.0f2
 
-    use better "FaceRight" in EnemyPatrol.cs
-    add delay in EnemyPatrol.cs
-    make sure player cannot fire while dead
-    use the "simulated" property of PC's Rigidbody2D to hide the player from simulation on death.
-    make enemies bounce off of other enemies
-    use a better groundcheck for player
+    use OnCollisionEnter2D on projectile instead of OnTriggerEnter2D
+    use OnTriggerEnter2D for Enemy WallCheck and EdgeCheck instead of overlap circle
+
+
