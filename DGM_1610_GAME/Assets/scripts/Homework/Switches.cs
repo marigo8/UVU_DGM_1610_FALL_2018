@@ -10,8 +10,9 @@ public class Switches : MonoBehaviour {
 	// Homework
 	public int PlayerScore;
 	public string PlayerName;
-	public float PlayerVelocity;
-	public bool PlayerVictory;
+	public int PlayerVelocity;
+	public string ConsoleInput;
+	public int PlayerKillCount;
 
 	// Use this for initialization
 	void Start () {
@@ -115,39 +116,111 @@ public class Switches : MonoBehaviour {
 			break;
 
 			default:
-				print("Welcome to the game," + PlayerName + "!");
+				print("Welcome to the game, " + PlayerName + "!");
 			break;
 		}
-		// switch(PlayerVelocity){
+		switch(PlayerVelocity){
 
-		// 	case 0.0f:
-		// 		print("Player is not moving");
-		// 	break;
+			case 0:
+				print("Player is not moving");
+			break;
 
-		// 	case 0.1f:
-		// 	case 0.2f:
-		// 	case 0.3f:
-		// 		print("Player is moving slowly");
-		// 	break;
+			case 1:
+			case 2:
+			case 3:
+				print("Player is moving slowly");
+			break;
 
-		// 	case 0.4f:
-		// 	case 0.5f:
-		// 	case 0.6f:
-		// 		print("Player is moving at moderate speed");
-		// 	break;
+			case 4:
+			case 5:
+			case 6:
+				print("Player is moving at moderate speed");
+			break;
 
-		// 	case 0.7f:
-		// 	case 0.8f:
-		// 	case 0.9f:
-		// 		print("Player is moving fast");
-		// 	break;
-		// 	case 1.0f:
-		// 		print("Player is moving at peak speed");
-		// 	break;
-		// 	default:
-		// 		print("Player's speed is incalculable");
-		// 	break;
-		// }
+			case 7:
+			case 8:
+			case 9:
+				print("Player is moving fast");
+			break;
+			case 10:
+				print("Player is moving at peak speed");
+			break;
+			default:
+				print("Player's speed is incalculable");
+			break;
+		}
+		switch(ConsoleInput){
+			
+			case "help":
+				print("No.");
+			break;
+			
+			case "give 999999999 money":
+				print("Value must be between (0) and (255).");
+			break;
+			
+			case "teleport":
+				print("You do not have permission to do that.");
+			break;
+			
+			case "unstuck":
+				print("Sorry, but I cannot help you.");
+			break;
+			
+			default:
+				print("That command does not exist.");
+			break;
+		}
+		switch(PlayerKillCount){
+			
+			case 0:
+				print("Get back to work.");
+			break;
+			
+			case 1:
+				print("You got a kill.");
+			break;
+			
+			case 2:
+				print("Double kill!");
+			break;
+			
+			case 3:
+				print("Triple kill!");
+			break;
+			
+			case 4:
+				print("Overkill!");
+			break;
+			
+			case 5:
+				print("Killtacular!");
+			break;
+			
+			case 6:
+				print("Killtrocity!");
+			break;
+			
+			case 7:
+				print("Killimanjaro!");
+			break;
+			
+			case 8:
+				print("Killtastrophe!");
+			break;
+			
+			case 9:
+				print("Killpocalypse!");
+			break;
+			
+			case 10:
+				print("Killionaire!");
+			break;
+
+			default:
+				print("Boi, chill.");
+			break;
+		}
 
 
 	}

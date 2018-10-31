@@ -5,7 +5,6 @@ using UnityEngine;
 public class Projectile : MonoBehaviour {
 
 	public float Speed;
-	public float LifeTime;
 	public Rigidbody2D PC;
 	
 	public GameObject EnemyDeath;
@@ -20,7 +19,6 @@ public class Projectile : MonoBehaviour {
 			Speed = -Speed;
 		}
 		GetComponent<Rigidbody2D>().velocity = new Vector2(Speed, GetComponent<Rigidbody2D>().velocity.y);
-		//StartCoroutine(LifeTimer());
 	}
 	
 	// Update is called once per frame
@@ -35,12 +33,12 @@ public class Projectile : MonoBehaviour {
 		}
 		if(other.tag != "Coin"){
 			Instantiate(HitParticle, transform.position, transform.rotation);
-			Destroy (gameObject);
+			StartCoroutine(DestroyParticle());
 		}
 	}
 
-	IEnumerator LifeTimer(){
-		yield return new WaitForSeconds(LifeTime);
+	IEnumerator DestroyParticle(){
+		yield return new WaitForSeconds(.01f);
 		Destroy (gameObject);
 	}
 }
