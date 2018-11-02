@@ -1,6 +1,5 @@
 TODO:
 
-    INSTALL UNITY 2018.1.0f2
 
     use OnCollisionEnter2D on projectile instead of OnTriggerEnter2D
     use OnTriggerEnter2D for Enemy WallCheck and EdgeCheck instead of overlap circle
