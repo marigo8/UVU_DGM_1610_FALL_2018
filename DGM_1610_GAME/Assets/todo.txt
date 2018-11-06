@@ -1,7 +1,9 @@
 TODO:
 
 
-    use OnCollisionEnter2D on projectile instead of OnTriggerEnter2D
     use OnTriggerEnter2D for Enemy WallCheck and EdgeCheck instead of overlap circle
 
-
+HOMEWORK:
+    5 Arrays
+    5 Loops
+    
