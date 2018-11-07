@@ -18,16 +18,13 @@ public class GroundCheck : MonoBehaviour {
 
 	void OnTriggerStay2D (Collider2D other){
 		if(other.tag == WhatIsGround){
-			print("hitting ground!");
 			CharacterMove.Grounded = true;
 		}
 		else{
-			print("other is not ground!");
 		}
 	}
 	void OnTriggerExit2D (Collider2D other){
 		if(other.tag == WhatIsGround){
-			print("leaving ground!");
 			CharacterMove.Grounded = false;
 		}
 	}

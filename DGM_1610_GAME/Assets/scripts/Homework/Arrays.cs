@@ -15,6 +15,7 @@ public class Arrays : MonoBehaviour {
 	public int[] PlayerScores = new int[4];
 	public string[] PlayerNames = new string[4];
 	public bool[] SafeTiles = new bool[16];
+	public string[] Pets = new string[5];
 
 	// Use this for initialization
 	void Start () {
@@ -91,6 +92,16 @@ public class Arrays : MonoBehaviour {
 		SafeTiles[13] = false;
 		SafeTiles[14] = true;
 		SafeTiles[15] = true;
+
+		Pets[0] = "Dog";
+		Pets[1] = "Cat";
+		Pets[2] = "Hamster";
+		Pets[3] = "Fish";
+		Pets[4] = "Zombie";
+
+		foreach(string Pet in Pets){
+			print("The "+Pet+" did a backflip.");
+		}
 
 
 

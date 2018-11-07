@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour {
 			Destroy (other.gameObject);
 			ScoreManager.AddPoints (PointsForKill);
 		}
-		if(other.tag != "Coin"){
+		if(other.tag != "Coin" && other.tag != "Projectile"){
 			Instantiate(HitParticle, transform.position, transform.rotation);
 			StartCoroutine(DestroyParticle());
 		}
