@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour {
 
 	// Player Controller
 	public Rigidbody2D Player;
+	public GameObject PlayerObject;
 
 	// Particles
 	public GameObject DeathParticle;
@@ -48,7 +49,8 @@ public class LevelManager : MonoBehaviour {
 
 		// Hide Player
 		//Player.enabled = false;
-		Player.simulated = false;
+		//Player.simulated = false;
+		PlayerObject.SetActive(false);
 		Player.Sleep();
 		Player.GetComponent<PolygonCollider2D>().enabled = false;
 		Player.GetComponent<Renderer>().enabled = false;
@@ -75,7 +77,8 @@ public class LevelManager : MonoBehaviour {
 
 		// Show Player
 		// Player.enabled = true;
-		Player.simulated = true;
+		//Player.simulated = true;
+		PlayerObject.SetActive(true);
 		Player.WakeUp();
 		Player.GetComponent<PolygonCollider2D>().enabled = true;
 		Player.GetComponent<Renderer> ().enabled = true;
