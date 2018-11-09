@@ -31,7 +31,8 @@ public class CharacterMove : MonoBehaviour {
 	private float MoveVelocity;
 
 	// Animation variables
-	public int MoveDirection = 0; // 0 = idle; 1 = right; -1 = left
+	//public int MoveDirection = 0; // 0 = idle; 1 = right; -1 = left
+	public static bool isRunning = false;
 
 	// Use this for initialization
 	void Start () {
