@@ -26,7 +26,10 @@ public class CameraFollow : MonoBehaviour {
 		}
 
 		if(IsFollowing){
-			transform.position = new Vector3(PC.transform.position.x + xOffset, PC.transform.position.y + yOffset, transform.position.z);
+			transform.position = new Vector3(
+				((PC.transform.position.x + xOffset + transform.position.x) / 2),
+				((PC.transform.position.y + yOffset + transform.position.y) / 2),
+				transform.position.z);
 		}
 	}
 }

@@ -30,6 +30,9 @@ public class CharacterMove : MonoBehaviour {
 	// Non-Stick Player
 	private float MoveVelocity;
 
+	// Animation variables
+	public int MoveDirection = 0; // 0 = idle; 1 = right; -1 = left
+
 	// Use this for initialization
 	void Start () {
 		PlayerScale = transform.localScale;
