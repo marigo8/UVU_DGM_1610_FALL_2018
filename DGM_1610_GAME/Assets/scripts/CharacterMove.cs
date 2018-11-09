@@ -32,7 +32,7 @@ public class CharacterMove : MonoBehaviour {
 
 	// Animation variables
 	//public int MoveDirection = 0; // 0 = idle; 1 = right; -1 = left
-	public static bool isRunning = false;
+	public static bool IsRunning = false;
 
 	// Use this for initialization
 	void Start () {
