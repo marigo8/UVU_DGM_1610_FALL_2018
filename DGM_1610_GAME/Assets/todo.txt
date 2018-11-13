@@ -4,6 +4,9 @@ TODO:
     use OnTriggerEnter2D for Enemy WallCheck and EdgeCheck instead of overlap circle
 
 HOMEWORK:
-    5 Arrays
-    5 Loops
-    
+    Ammo Cap
+    Ammo Pickup
+    Ammo UI
+    HP
+    Lives
+    HP Pickup

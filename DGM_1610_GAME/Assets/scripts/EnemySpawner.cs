@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		Enemy = Resources.Load("Prefabs/Enemy 1") as GameObject;
 	}
 	
 	// Update is called once per frame

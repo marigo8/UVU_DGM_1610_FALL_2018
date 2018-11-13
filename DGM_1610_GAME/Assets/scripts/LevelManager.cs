@@ -31,6 +31,9 @@ public class LevelManager : MonoBehaviour {
 	void Start () {
 		// Get Player Object on game start
 		// Player = FindObjectOfType<Rigidbody2D> ();
+
+		DeathParticle = Resources.Load("Prefabs/Death Particle") as GameObject;
+		RespawnParticle = Resources.Load("Prefabs/Respawn Particle") as GameObject;
 	}
 	void Update (){
 	}
@@ -59,7 +62,7 @@ public class LevelManager : MonoBehaviour {
 		ScoreManager.AddPoints(-PointPenaltyOnDeath);
 
 		// Debug Message
-		Debug.Log ("Player Respawn");
+		// Debug.Log ("Player Respawn");
 
 		// Respawn Delay
 		yield return new WaitForSeconds (RespawnDelay);
