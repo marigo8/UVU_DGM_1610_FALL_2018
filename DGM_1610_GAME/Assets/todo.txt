@@ -10,3 +10,7 @@ HOMEWORK:
     HP
     Lives
     HP Pickup
+
+Online Tutoring:
+    tues and thurs
+    5-8pm
