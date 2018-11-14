@@ -85,6 +85,7 @@ public class CharacterMove : MonoBehaviour {
 					MoveVelocity = MoveSpeed*MoveSpeedModifier;
 				}
 				GetComponent<Rigidbody2D>().velocity = new Vector2(MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
+				// GetComponent<Rigidbody2D>().AddForce(new Vector2(MoveSpeed*MoveSpeedModifier*4,0));
 			}
 			// If player is not facing right
 			if(!FacingRight){
@@ -107,6 +108,7 @@ public class CharacterMove : MonoBehaviour {
 					MoveVelocity = -MoveSpeed*MoveSpeedModifier;
 				}
 				GetComponent<Rigidbody2D>().velocity = new Vector2(MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
+				// GetComponent<Rigidbody2D>().AddForce(new Vector2(-MoveSpeed*MoveSpeedModifier*4,0));
 			}
 			// If player is facing right
 			if(FacingRight){

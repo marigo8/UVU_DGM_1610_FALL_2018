@@ -10,6 +10,9 @@ HOMEWORK:
     HP
     Lives
     HP Pickup
+    EC: loot generator
+        [empty, HP, Ammo, coin]
+        random.range(min, max);
 
 Online Tutoring:
     tues and thurs
