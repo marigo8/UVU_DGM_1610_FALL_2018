@@ -16,8 +16,9 @@ public class PlayerShoot : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.RightControl)){
-			if(!LevelManager.PlayerIsDead){
+			if(AmmoManager.HasAmmo){
 				Instantiate(Projectile, FirePoint.position, FirePoint.rotation);
+				AmmoManager.UseAmmo();
 			}
 		}
 	}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Switches : MonoBehaviour {
 
 	public int num;
-	public string name;
+	//public string name;
 
 	// Homework
 	public int PlayerScore;
