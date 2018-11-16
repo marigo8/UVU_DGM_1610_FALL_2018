@@ -7,6 +7,7 @@ public class AmmoManager : MonoBehaviour {
 
 	public static int AmmoCount;
 	public int StartAmmo;
+	public int AmmoCap;
 	Text AmmoText;
 	public static bool HasAmmo;
 
@@ -20,6 +21,9 @@ public class AmmoManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (AmmoCount > 0){
+			if(AmmoCount > AmmoCap){
+				AmmoCount = AmmoCap;
+			}
 			HasAmmo = true;
 		}else{
 			AmmoCount = 0;

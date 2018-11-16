@@ -2170,6 +2170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartAmmo: 10
+  AmmoCap: 10
 --- !u!114 &885680793
 MonoBehaviour:
   m_ObjectHideFlags: 0
