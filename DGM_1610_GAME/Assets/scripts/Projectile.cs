@@ -38,6 +38,15 @@ public class Projectile : MonoBehaviour {
 		if(other.tag == "Enemy"){
 			Instantiate(EnemyDeath, other.transform.position, other.transform.rotation);
 			Destroy (other.gameObject);
+			Instantiate(
+				Resources.Load("Prefabs/"+other.GetComponent<EnemyLoot>().Loot),
+				new Vector3(
+					other.transform.position.x + other.GetComponent<EnemyLoot>().xOffset,
+					other.transform.position.y + other.GetComponent<EnemyLoot>().yOffset,
+					other.transform.position.z
+				), 
+				other.transform.rotation
+			);
 			ScoreManager.AddPoints (PointsForKill);
 			Destroy(gameObject);
 			Instantiate(HitParticle, transform.position, transform.rotation);
