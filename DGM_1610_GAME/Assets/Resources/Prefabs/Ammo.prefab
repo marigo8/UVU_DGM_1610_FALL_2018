@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AmmoValue: 5
+  AmmoManagerObj: {fileID: 0}
 --- !u!212 &212010634317560708
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -113,7 +114,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.5058824, g: 0.92941177, b: 1, a: 1}
   m_FlipX: 0

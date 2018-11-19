@@ -5,7 +5,9 @@ using UnityEngine;
 public class EnemyPatrol : MonoBehaviour {
 
 	// Movement Variables
-	public float MoveSpeed;
+	// public float MoveSpeed;
+	public float MoveAcceleration;
+	public float MoveMaxVelocity;
 	public bool MoveRight;
 
 	// Wall Check
@@ -34,12 +36,18 @@ public class EnemyPatrol : MonoBehaviour {
 		// Flip sprite if needed.
 		if (MoveRight){ // Face Right
 			transform.localScale = new Vector3(.4f,.4f,1f);
-			GetComponent<Rigidbody2D>().velocity = new Vector2(MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+			//GetComponent<Rigidbody2D>().velocity = new Vector2(MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+			if(GetComponent<Rigidbody2D>().velocity.x < MoveMaxVelocity){
+				GetComponent<Rigidbody2D>().AddForce(new Vector2(MoveAcceleration,0));
+			}
 		}
 		else{ // Face Left
 			
 			transform.localScale = new Vector3(-.4f,.4f,1f);
-			GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+			// GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+			if(GetComponent<Rigidbody2D>().velocity.x > -MoveMaxVelocity){
+				GetComponent<Rigidbody2D>().AddForce(new Vector2(-MoveAcceleration,0));
+			}
 		}
 	}
 }

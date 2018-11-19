@@ -27,6 +27,9 @@ public class LevelManager : MonoBehaviour {
 	// Store Gravity Value
 	private float GravityStore;
 
+	// Ammo
+	public AmmoManager AmmoManagerObj;
+
 	// Use this for initialization
 	void Start () {
 		// Get Player Object on game start
@@ -88,6 +91,9 @@ public class LevelManager : MonoBehaviour {
 
 		// Player is Alive Again
 		PlayerIsDead = false;
+
+		// Refill Ammo
+		AmmoManager.AmmoCount = AmmoManagerObj.RespawnAmmo;
 
 		// Spawn Particle
 		Instantiate (RespawnParticle, CurrentCheckPoint.transform.position, CurrentCheckPoint.transform.rotation);

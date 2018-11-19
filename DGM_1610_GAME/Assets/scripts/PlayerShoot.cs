@@ -7,6 +7,7 @@ public class PlayerShoot : MonoBehaviour {
 	// Shoot Variables
 	public Transform FirePoint;
 	public GameObject Projectile;
+	public AmmoManager AmmoManagerObj;
 
 	// Use this for initialization
 	void Start () {
@@ -16,7 +17,8 @@ public class PlayerShoot : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.RightControl)){
-			if(AmmoManager.HasAmmo){
+			if(AmmoManagerObj.HasAmmo){
+				print("Shooting Projectile");
 				Instantiate(Projectile, FirePoint.position, FirePoint.rotation);
 				AmmoManager.UseAmmo();
 			}

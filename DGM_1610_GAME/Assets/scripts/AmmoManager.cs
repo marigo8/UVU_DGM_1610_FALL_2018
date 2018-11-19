@@ -7,9 +7,10 @@ public class AmmoManager : MonoBehaviour {
 
 	public static int AmmoCount;
 	public int StartAmmo;
+	public int RespawnAmmo;
 	public int AmmoCap;
 	Text AmmoText;
-	public static bool HasAmmo;
+	[HideInInspector] public bool HasAmmo;
 
 	// Use this for initialization
 	void Start () {
