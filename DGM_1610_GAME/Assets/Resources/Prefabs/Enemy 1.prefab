@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114717374349042548}
   - component: {fileID: 60404956076838826}
   - component: {fileID: 50283512256387298}
+  - component: {fileID: 114081983937259154}
   m_Layer: 10
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -235,6 +236,23 @@ PolygonCollider2D:
       - {x: 2.5247996, y: 0.018790187}
       - {x: 2.6271188, y: 0.12110952}
       - {x: 2.6271188, y: 0.30528432}
+--- !u!114 &114081983937259154
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1489112231014336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566bd83ea302ef84e988d659e3f70cb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PossibleLoot:
+  - Coin
+  - Ammo
+  Loot: 
+  yOffset: 1
+  xOffset: 0
 --- !u!114 &114335136512053126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -258,7 +276,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32df7ce18656d8419d1eee54df09b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 2
+  MoveAcceleration: 10
+  MoveMaxVelocity: 2
   MoveRight: 1
   WallCheck: {fileID: 4433933943133614}
   WallCheckRadius: 0.5
