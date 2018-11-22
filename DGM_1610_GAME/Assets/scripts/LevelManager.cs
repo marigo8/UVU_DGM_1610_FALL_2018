@@ -30,6 +30,9 @@ public class LevelManager : MonoBehaviour {
 	// Ammo
 	public AmmoManager AmmoManagerObj;
 
+	// Health
+	public HealthManager HealthManagerObj;
+
 	// Use this for initialization
 	void Start () {
 		// Get Player Object on game start
@@ -91,6 +94,9 @@ public class LevelManager : MonoBehaviour {
 
 		// Player is Alive Again
 		PlayerIsDead = false;
+
+		// Reset Health
+		HealthManager.Health = HealthManagerObj.MaxHealth;
 
 		// Refill Ammo
 		AmmoManager.AmmoCount = AmmoManagerObj.RespawnAmmo;

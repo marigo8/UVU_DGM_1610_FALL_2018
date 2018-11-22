@@ -14,7 +14,8 @@ public class KillPlayer : MonoBehaviour {
 	// Update is called once per frame
 	void OnTriggerEnter2D (Collider2D other) {
 		if(other.name == "PC"){
-			LevelManager.RespawnPlayer();
+			// LevelManager.RespawnPlayer();
+			HealthManager.TakeDamage(1);
 		}
 	}
 }
