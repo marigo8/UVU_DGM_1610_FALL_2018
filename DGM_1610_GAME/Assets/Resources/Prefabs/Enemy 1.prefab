@@ -250,6 +250,7 @@ MonoBehaviour:
   PossibleLoot:
   - Coin
   - Ammo
+  - Heart
   Loot: 
   yOffset: 1
   xOffset: 0
