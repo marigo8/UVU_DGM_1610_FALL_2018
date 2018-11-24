@@ -6,6 +6,10 @@ using UnityEngine.UI;
 public class HealthManager : MonoBehaviour {
 	public static int Health;
 	public int MaxHealth;
+	public static bool IsImmortal;
+	public float ImmortalDuration;
+	public static HealthManager HealthManagerObj;
+	public SpriteRenderer PlayerSprite;
 
 	Text HealthText;
 	public LevelManager LevelManagerObj;
@@ -13,8 +17,9 @@ public class HealthManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		HealthText = GetComponent<Text>();
-
+		HealthManagerObj = this;
 		Health = MaxHealth;
+
 	}
 	
 	// Update is called once per frame
@@ -33,8 +38,17 @@ public class HealthManager : MonoBehaviour {
 	public static void AddHealth (int HealthToAdd){
 		Health += HealthToAdd;
 	}
-
 	public static void TakeDamage (int Damage){
-		Health -= Damage;
+		if(!IsImmortal){
+			Health -= Damage;
+			HealthManagerObj.StartCoroutine("MakeImmortal");
+		}
+	}
+	
+	public IEnumerator MakeImmortal(){
+		IsImmortal = true;
+		yield return new WaitForSeconds(ImmortalDuration);
+		IsImmortal = false;
 	}
 }
+
