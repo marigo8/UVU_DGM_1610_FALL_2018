@@ -15,7 +15,13 @@ public class KillPlayer : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other) {
 		if(other.name == "PC"){
 			// LevelManager.RespawnPlayer();
-			HealthManager.TakeDamage(1);
+			if(HealthManager.TakeDamage(1)){
+				print("Attacking player");
+				Vector2 Dir = other.transform.position - transform.position;
+				Dir = new Vector2(Dir.x,Dir.y+10);
+				Dir = Dir.normalized;
+				other.GetComponent<Rigidbody2D>().AddForce(Dir*1000);
+			}
 		}
 	}
 }

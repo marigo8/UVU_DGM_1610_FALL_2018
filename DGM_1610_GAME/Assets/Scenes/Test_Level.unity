@@ -1644,8 +1644,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e4ef1a251890640904e2804127505b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 3
-  ImmortalDuration: 1
+  MaxHealth: 5
+  ImmortalDuration: 0.5
   PlayerSprite: {fileID: 510403971}
   LevelManagerObj: {fileID: 1499018469}
 --- !u!114 &864508019

@@ -38,11 +38,13 @@ public class HealthManager : MonoBehaviour {
 	public static void AddHealth (int HealthToAdd){
 		Health += HealthToAdd;
 	}
-	public static void TakeDamage (int Damage){
+	public static bool TakeDamage (int Damage){
 		if(!IsImmortal){
 			Health -= Damage;
 			HealthManagerObj.StartCoroutine("MakeImmortal");
+			return true;
 		}
+		return false;
 	}
 	
 	public IEnumerator MakeImmortal(){
