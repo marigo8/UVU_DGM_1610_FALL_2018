@@ -266,6 +266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelManager: {fileID: 0}
+  KnockbackX: 1000
+  KnockbackY: 10
 --- !u!114 &114717374349042548
 MonoBehaviour:
   m_ObjectHideFlags: 1
