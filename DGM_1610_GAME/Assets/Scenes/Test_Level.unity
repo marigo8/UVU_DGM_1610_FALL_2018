@@ -304,7 +304,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 807, y: -59}
+  m_AnchoredPosition: {x: 760, y: -59}
   m_SizeDelta: {x: 471.4, y: 54.799988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &190546397
@@ -1976,6 +1976,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelManager: {fileID: 0}
+  KnockbackX: 0
+  KnockbackY: 0
 --- !u!61 &980309460
 BoxCollider2D:
   m_ObjectHideFlags: 0
