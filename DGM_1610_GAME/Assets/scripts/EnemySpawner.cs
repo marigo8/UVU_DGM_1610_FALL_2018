@@ -13,8 +13,10 @@ public class EnemySpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.E)){
-			SpawnEnemy();
+		if(!Pause.Paused){
+			if(Input.GetKeyDown(KeyCode.E)){
+				SpawnEnemy();
+			}
 		}
 	}
 

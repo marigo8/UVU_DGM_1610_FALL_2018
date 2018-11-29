@@ -15,15 +15,18 @@ public class KillPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void OnTriggerEnter2D (Collider2D other) {
-		if(other.name == "PC"){
-			// LevelManager.RespawnPlayer();
-			if(HealthManager.TakeDamage(1)){
-				print("Attacking player");
-				Vector2 Dir = other.transform.position - transform.position;
-				Dir = new Vector2(Dir.x,Dir.y+KnockbackY);
-				Dir = Dir.normalized;
-				other.GetComponent<Rigidbody2D>().AddForce(Dir*KnockbackX);
-				// https://answers.unity.com/questions/1100879/push-object-in-opposite-direction-of-collision.html
+		
+		if(!Pause.Paused){
+			if(other.name == "PC"){
+				// LevelManager.RespawnPlayer();
+				if(HealthManager.TakeDamage(1)){
+					print("Attacking player");
+					Vector2 Dir = other.transform.position - transform.position;
+					Dir = new Vector2(Dir.x,Dir.y+KnockbackY);
+					Dir = Dir.normalized;
+					other.GetComponent<Rigidbody2D>().AddForce(Dir*KnockbackX);
+					// https://answers.unity.com/questions/1100879/push-object-in-opposite-direction-of-collision.html
+				}
 			}
 		}
 	}
