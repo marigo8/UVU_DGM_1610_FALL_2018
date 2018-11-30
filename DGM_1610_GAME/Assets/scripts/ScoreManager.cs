@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class ScoreManager : MonoBehaviour {
 	public static int Score;
 	public int WinScore;
+	public bool WonGame;
 
 	public Text WinText;
 
@@ -19,6 +20,7 @@ public class ScoreManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		WonGame = false;
 		ScoreText = GetComponent<Text>();
 
 		Score = 0;
@@ -34,18 +36,36 @@ public class ScoreManager : MonoBehaviour {
 		ScoreText.text = "Score: " + Score;
 
 		if(Score >= WinScore){
-			WinText.GetComponent<Text>().enabled = true;
-			//Time.timeScale = 0;
-			Pause.PauseGame();
+			if(!WonGame){
+				WinText.GetComponent<Text>().enabled = true;
+				//Time.timeScale = 0;
+				Pause.PauseGame();
+				StartCoroutine("LoadWinScreen");
+			}
+			if(Input.GetKeyDown(KeyCode.Escape)){
+			SceneManager.LoadScene(0);
+			}
+
+			if(Input.GetKeyDown(KeyCode.Return)){
+				SceneManager.LoadScene(2);
+			}
 		}
 
-		if(Input.GetKeyDown(KeyCode.Escape)){
-			SceneManager.LoadScene(0);
-		}
+		
 
 	}
 
 	public static void AddPoints (int PointsToAdd){
 		Score += PointsToAdd;
+	}
+
+	public IEnumerator LoadWinScreen(){
+		if(!WonGame){
+			WonGame = true;
+			print("foo");
+			yield return new WaitForSecondsRealtime(1);
+			print("bar");
+			SceneManager.LoadScene(2);
+		}
 	}
 }
