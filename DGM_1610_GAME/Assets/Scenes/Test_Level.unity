@@ -4708,6 +4708,7 @@ GameObject:
   - component: {fileID: 980309461}
   - component: {fileID: 980309460}
   - component: {fileID: 980309459}
+  - component: {fileID: 980309462}
   m_Layer: 0
   m_Name: Out Of Bounds
   m_TagString: Untagged
@@ -4721,7 +4722,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 980309458}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0859c3991bc22e64dbf0ef7fc1d6d0e5, type: 3}
   m_Name: 
@@ -4768,6 +4769,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &980309462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 980309458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7275e91c026fc2345b466e3133024c5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelManager: {fileID: 0}
 --- !u!1001 &982206485
 Prefab:
   m_ObjectHideFlags: 0
