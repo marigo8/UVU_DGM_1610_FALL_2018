@@ -38,8 +38,8 @@ public class ScoreManager : MonoBehaviour {
 		if(Score >= WinScore){
 			if(!WonGame){
 				WinText.GetComponent<Text>().enabled = true;
-				//Time.timeScale = 0;
-				Pause.PauseGame();
+				Time.timeScale = 0.25f;
+				//Pause.PauseGame();
 				StartCoroutine("LoadWinScreen");
 			}
 			if(Input.GetKeyDown(KeyCode.Escape)){
@@ -62,9 +62,7 @@ public class ScoreManager : MonoBehaviour {
 	public IEnumerator LoadWinScreen(){
 		if(!WonGame){
 			WonGame = true;
-			print("foo");
-			yield return new WaitForSecondsRealtime(1);
-			print("bar");
+			yield return new WaitForSecondsRealtime(5);
 			SceneManager.LoadScene(2);
 		}
 	}

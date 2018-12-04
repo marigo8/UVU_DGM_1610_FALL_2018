@@ -7,6 +7,7 @@ public class KillPlayer : MonoBehaviour {
 	public LevelManager LevelManager;
 	public float KnockbackX;
 	public float KnockbackY;
+	public int Damage;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +20,7 @@ public class KillPlayer : MonoBehaviour {
 		if(!Pause.Paused){
 			if(other.name == "PC"){
 				// LevelManager.RespawnPlayer();
-				if(HealthManager.TakeDamage(1)){
+				if(HealthManager.TakeDamage(Damage)){
 					print("Attacking player");
 					Vector2 Dir = other.transform.position - transform.position;
 					Dir = new Vector2(Dir.x,Dir.y+KnockbackY);
