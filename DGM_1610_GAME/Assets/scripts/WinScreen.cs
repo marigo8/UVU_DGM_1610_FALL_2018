@@ -12,6 +12,12 @@ public class WinScreen : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(Input.GetKeyDown(KeyCode.Return)){
+			PlayAgain();
+		}
+		if(Input.GetKeyDown(KeyCode.Escape)){
+			GoToMainMenu();
+		}
 		
 	}
 
