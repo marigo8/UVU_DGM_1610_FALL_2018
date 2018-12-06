@@ -9,7 +9,7 @@ public class CoinPickup : MonoBehaviour {
 		if (Other.GetComponent<CharacterMove> () == null){
 			return;
 		}
-		ScoreManager.AddPoints (CoinValue);
+		ScoreManager.AddPoints (CoinValue,GetComponent<Transform>().position);
 
 		Destroy (gameObject);
 	}

@@ -11,6 +11,8 @@ public class ScoreManager : MonoBehaviour {
 
 	public Text WinText;
 
+	public static GameObject PointsTextPrefab;
+
 	Text ScoreText;
 
 	void Awake(){
@@ -22,6 +24,8 @@ public class ScoreManager : MonoBehaviour {
 	void Start () {
 		WonGame = false;
 		ScoreText = GetComponent<Text>();
+		
+		PointsTextPrefab = Resources.Load("Prefabs/PointsText") as GameObject;
 
 		Score = 0;
 
@@ -55,8 +59,17 @@ public class ScoreManager : MonoBehaviour {
 
 	}
 
-	public static void AddPoints (int PointsToAdd){
+	public static void AddPoints (int PointsToAdd, Vector3 Position){
+		string PointsText = "";
+		TextMesh PointsTextObj;
+		if(PointsToAdd >= 0){
+			PointsText = "+" + PointsToAdd;
+		}else{
+			PointsText = "" + PointsToAdd;
+		}
 		Score += PointsToAdd;
+		PointsTextObj = Instantiate(PointsTextPrefab, Position, new Quaternion()).GetComponent<TextMesh>();
+		PointsTextObj.text = PointsText;
 	}
 
 	public IEnumerator LoadWinScreen(){

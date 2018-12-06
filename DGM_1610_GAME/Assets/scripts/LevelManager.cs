@@ -65,7 +65,7 @@ public class LevelManager : MonoBehaviour {
 		Player.GetComponent<Renderer>().enabled = false;
 		
 		// Point Penalty
-		ScoreManager.AddPoints(-PointPenaltyOnDeath);
+		ScoreManager.AddPoints(-PointPenaltyOnDeath, Player.GetComponent<Transform>().position);
 
 		// Debug Message
 		// Debug.Log ("Player Respawn");

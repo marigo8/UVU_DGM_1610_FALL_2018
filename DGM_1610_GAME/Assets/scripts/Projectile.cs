@@ -58,7 +58,7 @@ public class Projectile : MonoBehaviour {
 				), 
 				other.transform.rotation
 			);
-			ScoreManager.AddPoints (PointsForKill);
+			ScoreManager.AddPoints (PointsForKill,GetComponent<Transform>().position);
 			Destroy(gameObject);
 			Instantiate(HitParticle, transform.position, transform.rotation);
 		}
