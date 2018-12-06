@@ -1563,7 +1563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6963691722774784597e95a9c2661753, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WinScore: 25
+  WinScore: 100
   WonGame: 0
   WinText: {fileID: 1919917989}
 --- !u!1001 &202883275
@@ -7686,7 +7686,7 @@ MonoBehaviour:
   PC: {fileID: 0}
   IsFollowing: 0
   xOffset: 0
-  yOffset: 3
+  yOffset: 2.5
 --- !u!4 &1040936219 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4456220154505924, guid: f3c76bb02a6c3d349bc94b40508b4a21,
