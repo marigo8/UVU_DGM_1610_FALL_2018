@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d391f45b40caf84e9427180e885275d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmmoValue: 5
+  AmmoValue: 2
   AmmoManagerObj: {fileID: 0}
 --- !u!212 &212010634317560708
 SpriteRenderer:

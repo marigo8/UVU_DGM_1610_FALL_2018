@@ -33,7 +33,7 @@ public class HealthManager : MonoBehaviour {
 		else if(Health > MaxHealth){
 			Health = MaxHealth;
 		}
-		HealthText.text = "Health: " + Health;
+		HealthText.text = "Health: " + Health + "/" + MaxHealth;
 	}
 
 	public static void AddHealth (int HealthToAdd){

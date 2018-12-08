@@ -1041,7 +1041,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SubTotalScoreText: {fileID: 1356220628}
   HealthText: {fileID: 571469539}
+  HealthMult: 2
   AmmoText: {fileID: 1224057508}
+  AmmoMult: 2
   ScoreText: {fileID: 931008772}
   ScoreDelay: 0.5
   TotalScore: 0

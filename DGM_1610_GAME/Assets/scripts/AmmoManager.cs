@@ -30,7 +30,7 @@ public class AmmoManager : MonoBehaviour {
 			AmmoCount = 0;
 			HasAmmo = false;
 		}
-		AmmoText.text = "Ammo: " + AmmoCount;
+		AmmoText.text = "Ammo: " + AmmoCount + "/" + AmmoCap;
 	}
 
 	public static void UseAmmo (){

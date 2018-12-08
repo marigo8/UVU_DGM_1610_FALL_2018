@@ -25,13 +25,16 @@ public class LevelManager : MonoBehaviour {
 	public int PointPenaltyOnDeath;
 
 	// Store Gravity Value
-	private float GravityStore;
+	public static float GravityStore;
 
 	// Ammo
 	public AmmoManager AmmoManagerObj;
 
 	// Health
 	public HealthManager HealthManagerObj;
+
+	// Lives
+	public LifeManager LifeManagerObj;
 
 	// Use this for initialization
 	void Start () {
@@ -40,12 +43,29 @@ public class LevelManager : MonoBehaviour {
 
 		DeathParticle = Resources.Load("Prefabs/Death Particle") as GameObject;
 		RespawnParticle = Resources.Load("Prefabs/Respawn Particle") as GameObject;
+
+		
+		PlayerObject.SetActive(true);
+		Player.WakeUp();
+		Player.GetComponent<PolygonCollider2D>().enabled = true;
+		Player.GetComponent<Renderer> ().enabled = true;
+
+		// Player is Alive Again
+		PlayerIsDead = false;
+
+		// Reset Health
+		HealthManager.Health = HealthManagerObj.MaxHealth;
+
+		// Refill Ammo
+		AmmoManager.AmmoCount = AmmoManagerObj.RespawnAmmo;
 	}
 	void Update (){
 	}
 
 	public void RespawnPlayer(){
-		StartCoroutine("RespawnPlayerCo");
+		if(!LifeManagerObj.LostGame){
+			StartCoroutine("RespawnPlayerCo");
+		}
 	}
 
 	public IEnumerator RespawnPlayerCo(){
@@ -66,6 +86,9 @@ public class LevelManager : MonoBehaviour {
 		
 		// Point Penalty
 		ScoreManager.AddPoints(-PointPenaltyOnDeath, Player.GetComponent<Transform>().position);
+
+		// Life Penalty
+		LifeManager.RemoveLife();
 
 		// Debug Message
 		// Debug.Log ("Player Respawn");

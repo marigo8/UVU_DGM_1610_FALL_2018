@@ -5,6 +5,7 @@ using UnityEngine;
 public class OutOfBounds : MonoBehaviour {
 
 	public LevelManager LevelManager;
+	public bool KilledPlayer;
 
 	// Use this for initialization
 	void Start () {
@@ -13,15 +14,22 @@ public class OutOfBounds : MonoBehaviour {
 	
 	// Update is called once per frame
 	void OnTriggerEnter2D (Collider2D other) {
-		
 		if(!Pause.Paused){
 			if(other.name == "PC"){
-				LevelManager.RespawnPlayer();
+				if(!KilledPlayer){
+					KilledPlayer = true;
+					LevelManager.RespawnPlayer();
+					StartCoroutine("WaitForRespawn");
+				}
 			}
 			else if(other.name != "GroundCheck"){
 				print("Destroying "+other.name);
 				Destroy(other.gameObject);
 			}
 		}
+	}
+	public IEnumerator WaitForRespawn(){
+		yield return new WaitForSecondsRealtime(.5f);
+		KilledPlayer = false;
 	}
 }

@@ -41,7 +41,7 @@ public class ScoreManager : MonoBehaviour {
 
 		// if(Score >= WinScore){
 		// 	WinGame();
-		// }
+		// }\
 
 		
 
@@ -80,7 +80,7 @@ public class ScoreManager : MonoBehaviour {
 	public IEnumerator LoadWinScreen(){
 		if(!WonGame){
 			WonGame = true;
-			yield return new WaitForSecondsRealtime(5);
+			yield return new WaitForSecondsRealtime(2);
 			SceneManager.LoadScene(2);
 		}
 	}

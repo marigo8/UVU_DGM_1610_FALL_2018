@@ -7,8 +7,13 @@ using UnityEngine.UI;
 public class WinScreen : MonoBehaviour {
 
 	public Text SubTotalScoreText;
+
 	public Text HealthText;
+	public int HealthMult;
+	
 	public Text AmmoText;
+	public int AmmoMult;
+	
 	public Text ScoreText;
 
 	public float ScoreDelay;
@@ -18,7 +23,7 @@ public class WinScreen : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Time.timeScale = 1;
-		TotalScore = ScoreManager.Score + AmmoManager.AmmoCount + HealthManager.Health;
+		TotalScore = ScoreManager.Score + AmmoManager.AmmoCount*AmmoMult + HealthManager.Health*HealthMult;
 		StartCoroutine("DisplayScore");
 		
 		
@@ -48,10 +53,10 @@ public class WinScreen : MonoBehaviour {
 		SubTotalScoreText.text = ""+ScoreManager.Score;
 
 		yield return new WaitForSeconds(ScoreDelay);
-		HealthText.text = "+"+HealthManager.Health;
+		HealthText.text = "+"+HealthManager.Health + " x " + HealthMult;
 
 		yield return new WaitForSeconds(ScoreDelay);
-		AmmoText.text = "+"+AmmoManager.AmmoCount;
+		AmmoText.text = "+"+AmmoManager.AmmoCount + " x "+ AmmoMult;
 
 		yield return new WaitForSeconds(ScoreDelay);
 		ScoreText.text = ""+TotalScore;

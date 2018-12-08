@@ -109,8 +109,9 @@ MonoBehaviour:
   PC: {fileID: 0}
   EnemyDeath: {fileID: 0}
   HitParticle: {fileID: 0}
-  PointsForKill: 5
+  PointsForKill: 10
   TimeOut: 1
+  IsColliding: 0
 --- !u!212 &212882082387294704
 SpriteRenderer:
   m_ObjectHideFlags: 1
