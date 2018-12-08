@@ -39,7 +39,15 @@ public class ScoreManager : MonoBehaviour {
 		}
 		ScoreText.text = "Score: " + Score;
 
-		if(Score >= WinScore){
+		// if(Score >= WinScore){
+		// 	WinGame();
+		// }
+
+		
+
+	}
+
+	public void WinGame (){
 			if(!WonGame){
 				WinText.GetComponent<Text>().enabled = true;
 				Time.timeScale = 0.25f;
@@ -53,9 +61,6 @@ public class ScoreManager : MonoBehaviour {
 			if(Input.GetKeyDown(KeyCode.Return)){
 				SceneManager.LoadScene(2);
 			}
-		}
-
-		
 
 	}
 
