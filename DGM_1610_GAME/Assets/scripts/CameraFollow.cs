@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
 
-	public CharacterMove PC;
+	public Transform Target;
+	public float Speed;
 
 	public bool IsFollowing;
 
 	public float xOffset;
 	public float yOffset;
+	private float ZLock;
+	private Vector3 OffsetTarget;
 
 	// Use this for initialization
 	void Start () {
-		PC = FindObjectOfType<CharacterMove>();
+		//Target = FindObjectOfType<CharacterMove>();
+		ZLock = transform.position.z;
 
 		IsFollowing = true;
 	}
@@ -27,10 +31,19 @@ public class CameraFollow : MonoBehaviour {
 			}
 
 			if(IsFollowing){
-				transform.position = new Vector3(
-					((PC.transform.position.x + xOffset + transform.position.x) / 2),
-					((PC.transform.position.y + yOffset + transform.position.y) / 2),
-					transform.position.z);
+				// transform.position = new Vector3(
+				// 	((Target.position.x + xOffset + transform.position.x) / 2),
+				// 	((Target.position.y + yOffset + transform.position.y) / 2),
+				// 	transform.position.z);
+				OffsetTarget = new Vector3(
+					Target.position.x + xOffset,
+					Target.position.y + yOffset,
+					ZLock
+				);
+
+				float step = Vector3.Distance(transform.position,OffsetTarget)/(Speed*Time.deltaTime);
+
+				transform.position = Vector3.MoveTowards(transform.position,OffsetTarget,step);
 			}
 		}
 	}
