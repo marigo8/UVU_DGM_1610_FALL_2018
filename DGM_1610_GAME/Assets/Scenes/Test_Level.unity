@@ -4669,6 +4669,7 @@ MonoBehaviour:
   MoveSpeed: 6
   SprintModifier: 1.5
   AerialMoveSpeedModifier: 500
+  FallModifier: 1.01
   MaxVelocity: 0
   JumpHeight: 8
   GroundCheck: {fileID: 1124635379}
