@@ -3704,7 +3704,11 @@ MonoBehaviour:
   Health: 999
   Tail: 1
   Bark: 1
-  CoatColor: {r: 0.8490566, g: 0.66517216, b: 0.35644355, a: 0}
+  CoatColor:
+    r: 0.8490566
+    g: 0.66517216
+    b: 0.35644355
+    a: 0
   Size: 5
   EarType: triangle
   Friendly: 0
@@ -3801,7 +3805,7 @@ MonoBehaviour:
   - 
   - 
   - 
-  SafeTiles: 00000000000000000000000000000000
+  SafeTiles: 
   Pets:
   - 
   - 
@@ -3843,7 +3847,7 @@ MonoBehaviour:
   - 
   - 
   - 
-  SafeTiles: 00000000000000000000000000000000
+  SafeTiles: 
   Pets:
   - 
   - 
@@ -4664,6 +4668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 6
   SprintModifier: 1.5
+  AerialMoveSpeedModifier: 500
   MaxVelocity: 0
   JumpHeight: 8
   GroundCheck: {fileID: 1124635379}

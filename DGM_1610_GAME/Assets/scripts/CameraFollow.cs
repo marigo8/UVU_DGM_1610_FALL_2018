@@ -23,7 +23,7 @@ public class CameraFollow : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void LateUpdate () {
+	void FixedUpdate () {
 		if(!Pause.Paused){
 
 			if(Input.GetKeyDown(KeyCode.L)){
