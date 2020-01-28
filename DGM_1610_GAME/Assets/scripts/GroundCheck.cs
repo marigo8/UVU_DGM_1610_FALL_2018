@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GroundCheck : MonoBehaviour {
 
-	public string WhatIsGround;
+	public string whatIsGround;
+	public CharacterMove player;
 
 	// Use this for initialization
 	void Start () {
@@ -17,15 +18,13 @@ public class GroundCheck : MonoBehaviour {
 	}
 
 	void OnTriggerStay2D (Collider2D other){
-		if(other.tag == WhatIsGround){
-			CharacterMove.Grounded = true;
-		}
-		else{
+		if(other.tag == whatIsGround){
+			player.grounded = true;
 		}
 	}
 	void OnTriggerExit2D (Collider2D other){
-		if(other.tag == WhatIsGround){
-			CharacterMove.Grounded = false;
+		if(other.tag == whatIsGround){
+			player.grounded = false;
 		}
 	}
 }

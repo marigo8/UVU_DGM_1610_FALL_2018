@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50702554327469300}
   - component: {fileID: 114508521923951454}
   - component: {fileID: 58743494492095374}
-  m_Layer: 12
+  m_Layer: 17
   m_Name: Orb Projectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}

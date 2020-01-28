@@ -5,12 +5,13 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour {
 
 	public Transform Target;
+	private Rigidbody2D TargetRB;
 	public float Speed;
 
 	public bool IsFollowing;
 
-	public float xOffset;
-	public float yOffset;
+	public Vector2 offset;
+	public float VelocityModifier;
 	private float ZLock;
 	private Vector3 OffsetTarget;
 
@@ -31,15 +32,20 @@ public class CameraFollow : MonoBehaviour {
 			}
 
 			if(IsFollowing){
-				// transform.position = new Vector3(
-				// 	((Target.position.x + xOffset + transform.position.x) / 2),
-				// 	((Target.position.y + yOffset + transform.position.y) / 2),
-				// 	transform.position.z);
-				OffsetTarget = new Vector3(
-					Target.position.x + xOffset,
-					Target.position.y + yOffset,
-					ZLock
-				);
+				TargetRB = Target.GetComponent<Rigidbody2D>();
+				if(TargetRB){
+					OffsetTarget = new Vector3(
+						Target.position.x + offset.x + (TargetRB.velocity.x*VelocityModifier),
+						Target.position.y + offset.y,
+						ZLock
+					);
+				}else{
+					OffsetTarget = new Vector3(
+						Target.position.x + offset.x,
+						Target.position.y + offset.y,
+						ZLock
+					);
+				}
 
 				float step = Vector3.Distance(transform.position,OffsetTarget)/(Speed*Time.deltaTime);
 

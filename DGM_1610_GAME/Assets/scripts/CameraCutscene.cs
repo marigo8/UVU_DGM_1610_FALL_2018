@@ -28,8 +28,12 @@ public class CameraCutscene : MonoBehaviour {
 	}
 	public IEnumerator FollowTarget(){
 		print("C U T S C E N E");
+		PC.GetComponent<CharacterMove>().active = false;
+		yield return new WaitForSecondsRealtime(.5f);
 		MainCamera.Target = Target;
 		yield return new WaitForSecondsRealtime(Duration);
 		MainCamera.Target = PC;
+		yield return new WaitForSecondsRealtime(.5f);
+		PC.GetComponent<CharacterMove>().active = true;
 	}
 }

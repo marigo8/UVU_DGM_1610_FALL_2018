@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class KillPlayer : MonoBehaviour {
 
-	public LevelManager LevelManager;
-	public float KnockbackX;
-	public float KnockbackY;
+	private LevelManager LevelManager;
 	public int Damage;
 
 	// Use this for initialization
@@ -22,11 +20,6 @@ public class KillPlayer : MonoBehaviour {
 				// LevelManager.RespawnPlayer();
 				if(HealthManager.TakeDamage(Damage)){
 					print("Attacking player");
-					Vector2 Dir = other.transform.position - transform.position;
-					Dir = new Vector2(Dir.x,Dir.y+KnockbackY);
-					Dir = Dir.normalized;
-					other.GetComponent<Rigidbody2D>().AddForce(Dir*KnockbackX);
-					// https://answers.unity.com/questions/1100879/push-object-in-opposite-direction-of-collision.html
 				}
 			}
 		}

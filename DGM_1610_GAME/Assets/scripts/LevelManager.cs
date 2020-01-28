@@ -47,7 +47,7 @@ public class LevelManager : MonoBehaviour {
 		
 		PlayerObject.SetActive(true);
 		Player.WakeUp();
-		Player.GetComponent<PolygonCollider2D>().enabled = true;
+		Player.GetComponent<BoxCollider2D>().enabled = true;
 		Player.GetComponent<Renderer> ().enabled = true;
 
 		// Player is Alive Again
@@ -81,7 +81,7 @@ public class LevelManager : MonoBehaviour {
 		//Player.simulated = false;
 		PlayerObject.SetActive(false);
 		Player.Sleep();
-		Player.GetComponent<PolygonCollider2D>().enabled = false;
+		Player.GetComponent<BoxCollider2D>().enabled = false;
 		Player.GetComponent<Renderer>().enabled = false;
 		
 		// Point Penalty
@@ -112,7 +112,7 @@ public class LevelManager : MonoBehaviour {
 		//Player.simulated = true;
 		PlayerObject.SetActive(true);
 		Player.WakeUp();
-		Player.GetComponent<PolygonCollider2D>().enabled = true;
+		Player.GetComponent<BoxCollider2D>().enabled = true;
 		Player.GetComponent<Renderer> ().enabled = true;
 
 		// Player is Alive Again

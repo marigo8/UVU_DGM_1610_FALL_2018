@@ -24,9 +24,9 @@ TagManager:
   - Coin Ignore
   - Item
   - Item Ignore
-  - 
-  - 
-  - 
+  - DamagePlayer
+  - Player
+  - PlayerProjectile
   - 
   - 
   - 

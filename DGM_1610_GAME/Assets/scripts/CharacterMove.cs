@@ -9,178 +9,124 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterMove : MonoBehaviour {
+	
+	// Active
+	public bool active = true;
 
-	// Rigidbody2D
+	// Grounded
+	public bool grounded;
+
+	// Movement
+	public float moveAcceleration;
+	public float aerialAcceleration;
+	public float moveMaxSpeed;
+	public float moveSpeedIncrement;
+	private float moveSpeed;
+	private bool running;
+	
+	// Jump
+	public float jumpSpeed;
+	private bool doubleJump;
+	private bool jumpReady;
+	public float jumpCooldownTime;
+
+	// Components
 	private Rigidbody2D rb;
+	private Animator anim;
 
-	// Player Movement Variables
-	public float MoveSpeed;
-	public float SprintModifier;
-	public float AerialMoveSpeedModifier;
-	public float FallModifier;
-	public float MaxVelocity;
-	public float JumpHeight;
-	private bool DoubleJump;
-	private float MoveSpeedModifier;
-	private bool FacingRight = true;
-	private Vector3 PlayerScale;
+	// Sprite direction
+	private Vector3 playerScale;
+	private bool facingRight;
 
-	// Player Grounded Variables
-	// public Transform GroundCheck;
-	// public float GroundCheckRadius;
-	public Collider2D GroundCheck;
-	public LayerMask WhatIsGround;
-	public static bool Grounded;
-
-	// Non-Stick Player
-	private float MoveVelocity;
-
-	// Animation variables
-	public Animator AnimatorObj;
-
-
-	// Use this for initialization
-	void Start () {
+	void Start(){
 		rb = GetComponent<Rigidbody2D>();
-		PlayerScale = transform.localScale;
+		anim = GetComponent<Animator>();
+		playerScale = transform.localScale;
+		jumpReady = true;
 	}
 
-	// void FixedUpdate () {
-	// 	Set Grounded variable
-	// 	Grounded = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, WhatIsGround);
-	// }
-
-	
-	
-	// Update is called once per frame
-	void FixedUpdate () {
-		if(!Pause.Paused){
-			if(!LevelManager.PlayerIsDead){
-
-				// Non-Stick Player
-				if(Grounded){
-					MoveVelocity = 0f;
-					rb.velocity = new Vector3(0,rb.velocity.y);
-				}
-				// Sprint
-				if(Input.GetKey (KeyCode.LeftShift)){
-					MoveSpeedModifier = SprintModifier;
-				}else{
-					MoveSpeedModifier = 1;
-				}
-				// Jump
-				if( (Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown (KeyCode.W)) && Grounded){
-					Jump();
-				}
-
-				// Double Jump
-				if(Grounded){
-					DoubleJump = false;
-				}
-				if( (Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown (KeyCode.W)) && !DoubleJump && !Grounded){
-					Jump();
-					DoubleJump = true;
-				}
-				// Move Right
-				if(Input.GetKey (KeyCode.D)){
-					// velocity.x = velocity.x + Acceleration;
-					// rb.velocity = new Vector2(rb.velocity.x+Acceleration, rb.velocity.y);
-					if(Grounded){ // if grounded...
-						MoveVelocity += MoveSpeed*MoveSpeedModifier; // move normally (fixed velocity)
-						AnimatorObj.SetBool("IsRunning", true);
-					}else{ // if in the air
-						rb.AddForce(new Vector2(MoveSpeed*MoveSpeedModifier*Time.deltaTime * AerialMoveSpeedModifier,0));
-						if(rb.velocity.x > MoveSpeed*MoveSpeedModifier){
-							rb.velocity = new Vector2(MoveSpeed*MoveSpeedModifier, rb.velocity.y);
-						}
-						// MoveVelocity = rb.velocity.x + MoveSpeed*MoveSpeedModifier*0.1f; // move with dynamic velocity
-						// if(MoveVelocity > MoveSpeed*MoveSpeedModifier){ // but cap it if it gets too high
-						// 	MoveVelocity = MoveSpeed*MoveSpeedModifier;
-						// }
-						// rb.velocity = new Vector2(MoveVelocity, rb.velocity.y);
-						// rb.AddForce(new Vector2(MoveSpeed*MoveSpeedModifier*4,0));
-					}
-					// If player is not facing right
-					if(!FacingRight){
-						// Make Player face right
-						//PlayerScale.x *= -1;
-						transform.localScale = new Vector3(PlayerScale.x,PlayerScale.y,PlayerScale.z);
-						// Player is now facing right
-						FacingRight = true;
-					}	
-				}
-				if(Input.GetKeyUp(KeyCode.D)){
-					AnimatorObj.SetBool("IsRunning", false);
-				}
-				// Move Left
-				if(Input.GetKey (KeyCode.A)){
-					// velocity.x = velocity.x - Acceleration;
-					// rb.velocity = new Vector2(rb.velocity.x-Acceleration, rb.velocity.y);
-					if(Grounded){
-						MoveVelocity += -MoveSpeed*MoveSpeedModifier;
-						AnimatorObj.SetBool("IsRunning", true);
-					}else{
-						rb.AddForce(new Vector2(-MoveSpeed*MoveSpeedModifier*Time.deltaTime * AerialMoveSpeedModifier,0));
-						if(rb.velocity.x < -MoveSpeed*MoveSpeedModifier){
-							rb.velocity = new Vector2(-MoveSpeed*MoveSpeedModifier, rb.velocity.y);
-						}
-						// MoveVelocity = rb.velocity.x - MoveSpeed*MoveSpeedModifier*0.05f;
-						// if(MoveVelocity < -MoveSpeed*MoveSpeedModifier){
-						// 	MoveVelocity = -MoveSpeed*MoveSpeedModifier;
-						// }
-
-						// rb.velocity = new Vector2(MoveVelocity, rb.velocity.y);
-						// rb.AddForce(new Vector2(-MoveSpeed*MoveSpeedModifier*4,0));
-					}
-					// If player is facing right
-					if(FacingRight){
-						// Make Player Face left
-						//PlayerScale.x *= -1;
-						transform.localScale = new Vector3(-PlayerScale.x,PlayerScale.y,PlayerScale.z);
-						// Player is no longer facing right
-						FacingRight = false;
-					}	
-				}
-				if(Input.GetKeyUp(KeyCode.A)){
-					AnimatorObj.SetBool("IsRunning", false);
-				}
-				if(Grounded){
-					AnimatorObj.SetBool("IsGrounded",true);
-					//rb.velocity = new Vector2(MoveVelocity, rb.velocity.y);
-					transform.position += new Vector3(MoveVelocity,0,0) * Time.deltaTime;
-					// rb.velocity = new Vector2(MoveVelocity, rb.velocity.y);
-				}
-				else{
-					AnimatorObj.SetBool("IsGrounded",false);
-					if(rb.velocity.y < 0){
-						rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * FallModifier);
-					}
-				}
+	void FixedUpdate(){
+		if(active){
+			rb.simulated = true;
+			if(grounded){
+				doubleJump = true;
 			}
-			else{
-				rb.velocity = new Vector2(0,0);
+			// Move
+			Move(Input.GetAxis("Horizontal"));
+
+			// Jump
+			if(Input.GetButtonDown("Jump")){
+				Jump();
 			}
+
+			// Animation Parameters
+			anim.SetBool("IsGrounded",grounded);
+			anim.SetBool("IsRunning",running);
+		}else{
+			rb.simulated = false;
 		}
 	}
-	// void LateUpdate(){
-	// 	MoveVelocity = 0;
-	// }
-
-	// Character Jump Function
-	public void Jump(){
-		// velocity.y = JumpHeight;
-		float xSpeed = 0;
-		if(Grounded){
-			if(Input.GetKey(KeyCode.D)){
-				xSpeed += MoveSpeed*MoveSpeedModifier;
+	public void Move(float direction){ // 1 = right; -1 = left; 0 = don't move;
+		if(grounded){
+			moveSpeed += moveSpeedIncrement*Time.deltaTime;
+			if(moveSpeed > moveMaxSpeed){
+				moveSpeed = moveMaxSpeed;
 			}
-			if(Input.GetKey(KeyCode.A)){
-				xSpeed += -MoveSpeed*MoveSpeedModifier;
-			}
+			rb.velocity = new Vector2(moveSpeed * direction, rb.velocity.y);
+				setSpriteDirection(direction);
 		}
 		else{
-			xSpeed = rb.velocity.x;
+			moveSpeed = 0;
+			rb.AddForce(Vector2.right * direction * aerialAcceleration);
+			if(direction != 0){
+				setSpriteDirection(rb.velocity.x);
+			}
+			
+
 		}
-		rb.velocity = new Vector2(xSpeed, JumpHeight);
+		if(rb.velocity.x > moveMaxSpeed){
+			rb.velocity = new Vector2(moveMaxSpeed,rb.velocity.y);
+		}
+		else if(rb.velocity.x < -moveMaxSpeed){
+			rb.velocity = new Vector2(-moveMaxSpeed,rb.velocity.y);
+		}
+
+		if(direction != 0){
+			running = true;
+		}else{
+			running = false;
+		}
 	}
+	public void Jump(){
+		if(jumpReady){
+			if(grounded){
+				rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+				StartCoroutine("JumpCooldown");
+			}
+			else if(doubleJump){
+				rb.velocity = new Vector2(rb.velocity.x, jumpSpeed*1.25f);
+				doubleJump = false;
+				float direction = Input.GetAxis("Horizontal");
+				StartCoroutine("JumpCooldown");
+			}
+		}
+	}
+	
+	public IEnumerator JumpCooldown(){
+		jumpReady = false;
+		yield return new WaitForSeconds(jumpCooldownTime);
+		jumpReady = true;
+	}
+
+	private void setSpriteDirection(float direction){
+		if(direction > 0){
+			transform.localScale = new Vector3(playerScale.x,playerScale.y,playerScale.z);
+			facingRight = true;
+		}
+		else if(direction < 0){
+			transform.localScale = new Vector3(-playerScale.x,playerScale.y,playerScale.z);
+			facingRight = false;
+		}
+	}
+
 }
