@@ -4513,7 +4513,7 @@ MonoBehaviour:
   moveAcceleration: 100
   aerialAcceleration: 50
   moveMaxSpeed: 10
-  moveSpeedIncrement: 1
+  moveSpeedIncrement: 20
   jumpSpeed: 10
   jumpCooldownTime: 0.1
 --- !u!95 &510403975
