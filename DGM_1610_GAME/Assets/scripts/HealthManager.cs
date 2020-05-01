@@ -50,7 +50,11 @@ public class HealthManager : MonoBehaviour {
 	
 	public IEnumerator MakeImmortal(){
 		IsImmortal = true;
+		PlayerSprite.color = Color.red;
+
 		yield return new WaitForSeconds(ImmortalDuration);
+
+		PlayerSprite.color = Color.white;
 		IsImmortal = false;
 	}
 }
